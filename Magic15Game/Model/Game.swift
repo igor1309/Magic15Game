@@ -8,78 +8,76 @@
 
 import Foundation
 
-struct Game {
+struct Game<TileFace: Equatable> {
     let rows: Int
     let columns: Int
     
-    private(set) var tiles: Matrix<Tile>
-    private var target1: Matrix<Tile>
-    private var target2: Matrix<Tile>
+    private(set) var tiles: Matrix<Tile<TileFace>>
+    private let target1IDs: [Int]
+    private let target2IDs: [Int]
     private(set) var steps: Int
+    private(set) var gameOver: Bool = false
     
-    init() {
-        self.init(rows: 4, columns: 4)
-    }
     
-    init(rows: Int, columns: Int) {
+    init(rows: Int,
+         columns: Int,
+         tileFactory: @escaping (Int, Int) -> Tile<TileFace>
+    ) {
         self.rows = rows
         self.columns = columns
         
         self.tiles = Matrix(rows: rows, columns: rows) { row, col in
-            let number = row * columns + col
-            return Tile(face: number == 0 ? "dot" : String(number))
+            tileFactory(row, col)
         }
         self.tiles.shuffle()
         
+        self.steps = 0
+        
+        
         //  MARK: Target
         
-        self.target1 = Matrix(rows: rows, columns: rows) { row, col in
-            let number = row * columns + col
-            return Tile(face: number + 1 == 16 ? "dot" : String(number + 1))
-        }
+        var target1 = Array(1...(rows * columns - 1))
+        target1.append(0)
+        self.target1IDs = target1
         
-        //  MARK: - нужен еще вариант, где 14 и 15 переставлены местами!!!!
-        //  MARK: ИСПРАВИТЬ!!!!
-        self.target2 = Matrix(rows: rows, columns: rows) { row, col in
-            let number = row * columns + col
-            return Tile(face: number + 1 == 16 ? "dot" : String(number + 1))
-        }
-
-        self.steps = 0
-    }
-    
-    var gameOver: Bool {
-        let tileFaces    =   tiles.matrix.flatMap{ $0 }.map { $0.face }
-        let target1Faces = target1.matrix.flatMap{ $0 }.map { $0.face }
-        let target2Faces = target2.matrix.flatMap{ $0 }.map { $0.face }
-        
-        return tileFaces == target1Faces || tileFaces == target2Faces
+        var target2 = Array(1...(rows * columns - 3))
+        target2.append(rows * columns - 1)
+        target2.append(rows * columns - 2)
+        target2.append(0)
+        self.target2IDs = target2
     }
     
     //  MARK: - Move
     
     mutating func moveTile(row: Int, column: Int) {
-        guard tile(row: row, column: column).face != "dot" else {
-            print("can't move dot")
+        func checkGameOver() {
+            print(target1IDs)
+            print(target2IDs)
+            let tileIDs = tiles.matrix.flatMap{ $0 }.map { $0.id }
+            gameOver = tileIDs == target1IDs || tileIDs == target2IDs
+        }
+        
+        
+        guard tile(row: row, column: column).id != 0 else {
+            print("can't move tile with ID 0")
             return
         }
-
-        //  selected tile is not dot, check adjacent
         
-//        print("moving tile with face \(tile(row: row, column: column).face)")
-
+        //  selected tile ID is not 0, check adjacent to find tile with ID 0 and move
+        
         let possibleIndices: [(row: Int, column: Int)] = [
             (row, column - 1),
             (row, column + 1),
             (row - 1, column),
             (row + 1, column)
-        ]
+            ]
             .filter { tiles.indexIsValid(row: $0.row, column: $0.column) }
         
         for index in possibleIndices {
-            if tiles[index.row, index.column].face == "dot" {
+            if tiles[index.row, index.column].id == 0 {
                 tiles.swapAt(aIndex: index, bIndex: (row: row, column: column))
                 steps += 1
+                checkGameOver()
                 break
             }
         }
@@ -87,14 +85,12 @@ struct Game {
     
     //  MARK: - Model Access
     
-    func tile(row: Int, column: Int) -> Tile {
+    func tile(row: Int, column: Int) -> Tile<TileFace> {
         tiles[row, column]
     }
 }
 
-struct Tile: Identifiable, Equatable {
-    var face: String
-    //    var position: Int || (row: Int, col: Int)
-    
-    var id = UUID()
+struct Tile<TileFace: Equatable>: Identifiable, Equatable {
+    var id: Int
+    var face: TileFace
 }

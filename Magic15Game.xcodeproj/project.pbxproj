@@ -14,7 +14,7 @@
 		2ACD1433248EAE30001DC143 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2ACD1432248EAE30001DC143 /* Preview Assets.xcassets */; };
 		2ACD1436248EAE30001DC143 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2ACD1434248EAE30001DC143 /* LaunchScreen.storyboard */; };
 		2ACD143F248EB3A6001DC143 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD143E248EB3A6001DC143 /* Game.swift */; };
-		2ACD1442248EB3CE001DC143 /* Magic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD1441248EB3CE001DC143 /* Magic.swift */; };
+		2ACD1442248EB3CE001DC143 /* Magic15.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD1441248EB3CE001DC143 /* Magic15.swift */; };
 		2ACD1445248EC9FF001DC143 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD1444248EC9FF001DC143 /* Matrix.swift */; };
 		2ACD1447248ECC95001DC143 /* Preview Tweaks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD1446248ECC95001DC143 /* Preview Tweaks.swift */; };
 /* End PBXBuildFile section */
@@ -29,7 +29,7 @@
 		2ACD1435248EAE30001DC143 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2ACD1437248EAE30001DC143 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2ACD143E248EB3A6001DC143 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
-		2ACD1441248EB3CE001DC143 /* Magic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Magic.swift; sourceTree = "<group>"; };
+		2ACD1441248EB3CE001DC143 /* Magic15.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Magic15.swift; sourceTree = "<group>"; };
 		2ACD1444248EC9FF001DC143 /* Matrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
 		2ACD1446248ECC95001DC143 /* Preview Tweaks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Preview Tweaks.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,7 +106,7 @@
 		2ACD1443248EB3D2001DC143 /* Model View */ = {
 			isa = PBXGroup;
 			children = (
-				2ACD1441248EB3CE001DC143 /* Magic.swift */,
+				2ACD1441248EB3CE001DC143 /* Magic15.swift */,
 			);
 			path = "Model View";
 			sourceTree = "<group>";
@@ -195,7 +195,7 @@
 				2ACD1445248EC9FF001DC143 /* Matrix.swift in Sources */,
 				2ACD1447248ECC95001DC143 /* Preview Tweaks.swift in Sources */,
 				2ACD142E248EAE2F001DC143 /* ContentView.swift in Sources */,
-				2ACD1442248EB3CE001DC143 /* Magic.swift in Sources */,
+				2ACD1442248EB3CE001DC143 /* Magic15.swift in Sources */,
 				2ACD143F248EB3A6001DC143 /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,6 +341,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.photoigor.Magic15Game;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -361,6 +362,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.photoigor.Magic15Game;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

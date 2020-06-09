@@ -27,7 +27,7 @@ struct ButtonView: View {
 
 
 struct ContentView: View {
-    @ObservedObject var magic = Magic()
+    @ObservedObject var magic = Magic15()
     
     var body: some View {
         VStack {

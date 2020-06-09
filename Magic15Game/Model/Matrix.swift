@@ -14,16 +14,22 @@ struct Matrix<T: Equatable>: Equatable {
     
     private var grid: [T]
     
-    init(rows: Int, columns: Int, defaultValue: @escaping (Int, Int) -> T) {
+    init(rows: Int, columns: Int, factory: @escaping (Int, Int) -> T) {
         self.rows = rows
         self.columns = columns
         
         var grid = [T]()
         for row in 0..<rows {
             for column in 0..<columns {
-                grid.append(defaultValue(row, column))
+                grid.append(factory(row, column))
             }
         }
+        self.grid = grid
+    }
+    
+    init(rows: Int, columns: Int, grid: [T]) {
+        self.rows = rows
+        self.columns = columns
         self.grid = grid
     }
     

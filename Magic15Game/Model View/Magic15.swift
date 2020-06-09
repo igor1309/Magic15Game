@@ -16,13 +16,11 @@ final class Magic15: ObservableObject {
         let rows = 4
         let columns = 4
         
-        return Game<String>(
-            rows: rows,
-            columns: columns
-        ) { row, column in
-            let index = row * 4 + columns
-            let face = index == 0 ? "dot": String(index)
-            return Tile(id: index, face: face)
+        return Game<String>(rows: rows, columns: columns) { row, column in
+            let ix = row * columns + column
+            let face = ix == 0 ? "dot": String(ix)
+            
+            return Tile(id: ix, face: face)
         }
     }
     
