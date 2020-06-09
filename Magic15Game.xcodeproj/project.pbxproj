@@ -13,6 +13,10 @@
 		2ACD1430248EAE30001DC143 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2ACD142F248EAE30001DC143 /* Assets.xcassets */; };
 		2ACD1433248EAE30001DC143 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2ACD1432248EAE30001DC143 /* Preview Assets.xcassets */; };
 		2ACD1436248EAE30001DC143 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2ACD1434248EAE30001DC143 /* LaunchScreen.storyboard */; };
+		2ACD143F248EB3A6001DC143 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD143E248EB3A6001DC143 /* Game.swift */; };
+		2ACD1442248EB3CE001DC143 /* Magic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD1441248EB3CE001DC143 /* Magic.swift */; };
+		2ACD1445248EC9FF001DC143 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD1444248EC9FF001DC143 /* Matrix.swift */; };
+		2ACD1447248ECC95001DC143 /* Preview Tweaks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD1446248ECC95001DC143 /* Preview Tweaks.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		2ACD1432248EAE30001DC143 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2ACD1435248EAE30001DC143 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2ACD1437248EAE30001DC143 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2ACD143E248EB3A6001DC143 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		2ACD1441248EB3CE001DC143 /* Magic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Magic.swift; sourceTree = "<group>"; };
+		2ACD1444248EC9FF001DC143 /* Matrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
+		2ACD1446248ECC95001DC143 /* Preview Tweaks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Preview Tweaks.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +66,10 @@
 			children = (
 				2ACD1429248EAE2F001DC143 /* AppDelegate.swift */,
 				2ACD142B248EAE2F001DC143 /* SceneDelegate.swift */,
-				2ACD142D248EAE2F001DC143 /* ContentView.swift */,
+				2ACD1448248ECCA0001DC143 /* Preview Tweaks */,
+				2ACD143D248EB393001DC143 /* View */,
+				2ACD1443248EB3D2001DC143 /* Model View */,
+				2ACD1440248EB3AB001DC143 /* Model */,
 				2ACD142F248EAE30001DC143 /* Assets.xcassets */,
 				2ACD1434248EAE30001DC143 /* LaunchScreen.storyboard */,
 				2ACD1437248EAE30001DC143 /* Info.plist */,
@@ -73,6 +84,39 @@
 				2ACD1432248EAE30001DC143 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2ACD143D248EB393001DC143 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2ACD142D248EAE2F001DC143 /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2ACD1440248EB3AB001DC143 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2ACD143E248EB3A6001DC143 /* Game.swift */,
+				2ACD1444248EC9FF001DC143 /* Matrix.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2ACD1443248EB3D2001DC143 /* Model View */ = {
+			isa = PBXGroup;
+			children = (
+				2ACD1441248EB3CE001DC143 /* Magic.swift */,
+			);
+			path = "Model View";
+			sourceTree = "<group>";
+		};
+		2ACD1448248ECCA0001DC143 /* Preview Tweaks */ = {
+			isa = PBXGroup;
+			children = (
+				2ACD1446248ECC95001DC143 /* Preview Tweaks.swift */,
+			);
+			path = "Preview Tweaks";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,7 +192,11 @@
 			files = (
 				2ACD142A248EAE2F001DC143 /* AppDelegate.swift in Sources */,
 				2ACD142C248EAE2F001DC143 /* SceneDelegate.swift in Sources */,
+				2ACD1445248EC9FF001DC143 /* Matrix.swift in Sources */,
+				2ACD1447248ECC95001DC143 /* Preview Tweaks.swift in Sources */,
 				2ACD142E248EAE2F001DC143 /* ContentView.swift in Sources */,
+				2ACD1442248EB3CE001DC143 /* Magic.swift in Sources */,
+				2ACD143F248EB3A6001DC143 /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
